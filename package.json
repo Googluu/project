@@ -1,0 +1,17 @@
+{
+  "name": "firebase-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sneyder J.H Rodríguez <sneyder.h.rodriguez@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "firebase": "^9.8.2",
+    "react": "^18.1.0",
+    "react-bootstrap": "^2.4.0"
+  }
+}

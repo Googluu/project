@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Studios</title>
+    <link rel="stylesheet" href="../src/styles/styles.css">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://bootswatch.com/5/yeti/bootstrap.min.css"
+    />
+
+    <!-- BOOTSTRAP CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <!-- NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- <div class="container"> -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNav" style="justify-content:space-between;">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signinModal">Signin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logout">Logout</a>
+                    </li>
+                </ul>
+                <button class="switch" id="switch">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+            </div>
+        <!-- </div> -->
+    </nav>
+
+    <!-- MAIN CONTENT -->
+
+    <h1 class="title">MARVEL STUDIOS</h1>
+
+
+            <!-- ADD TASK -->
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                <h1 class="h4">Add Crud</h1>
+
+                
+
+                <form id="crud-form">
+                    <label for="title">Image:</label>
+                    <input
+                    type="file" 
+                    id="crud-image"
+                />
+
+                    <label for="title">Title:</label>
+                <input
+                    type="text"
+                    id="crud-title"
+                    class="form-control mb-3"
+                    class="My First Title"
+                    placeholder="Crud Title"
+                    autofocus
+                />
+
+                <label for="description">Description:</label>
+                <textarea
+                    id="crud-description"
+                    rows="3"
+                    class="form-control mb-3"
+                    placeholder="Crud Description"
+                ></textarea>
+
+                <button class="btn btn-primary" id="btn-crud-form">Save
+                </button>
+                </form>
+            </div>
+        </div>
+        </div>
+            <!-- Cruds List -->
+                <div class="col-md-6" id="cruds-container"></div>
+    </div>
+</div>
+    <script src="../src/principal/index.js" type="module"></script>
+
+
+    <div class="container">
+        <!--<div class="card">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT95Db6V4jzEkaZjnWEV5n0qHu1a2InkUgafj3lWQDRxQIxYvL3" alt="">
+            <h4>Iron Man</h4>
+            <p>Tony Stark es un inventor de armamento brillante que es secuestrado en el extranjero. Sus captores son unos terroristas que le obligan a construir una máquina destructiva pero Tony se construirá una armadura para poder enfrentarse a ellos y escapar.</p>
+            <a href="https://es.wikipedia.org/wiki/Iron_Man_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.zonanegativa.com/2008/3238.jpg" alt="">
+            <h4>Hulk</h4>
+            <p>Bruce Banner recorre el mundo en busca de un antídoto para librarse de su alter ego. Además tendrá que hacer frente a Emil, un nuevo enemigo, lo que convertirá a Nueva York en el escenario de la última batalla entre las dos criaturas más poderosas.</p>
+            <a href="https://es.wikipedia.org/wiki/The_Incredible_Hulk_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://4.bp.blogspot.com/_TQCLHGDzYfA/S9qIE7ccaqI/AAAAAAAAB9w/aXUzG4SorR0/s1600/IM2_poster.jpg" alt="">
+            <h4>Iron Man 2</h4>
+            <p>Con el mundo ahora consciente de que él es Iron Man, el millonario inventor Tony Stark debe forjar nuevas alianzas y enfrentarse a un nuevo y poderoso enemigo.</p>
+            <a href="https://es.wikipedia.org/wiki/Iron_Man_2">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://pics.filmaffinity.com/Thor-265653214-large.jpg" alt="">
+            <h4>Thor</h4>
+            <p>Tras desatar una antigua guerra, el codicioso guerrero Thor es desterrado a la Tierra por su padre para que viva entre los hombres y descubra así el verdadero sentido de la humildad. Allí, sin sus poderes, Thor deberá enfrentarse a las fuerzas más oscuras que su mayor enemigo le enviará desde Asgard.</p>
+            <a href="https://es.wikipedia.org/wiki/Thor_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.diariodesevilla.es/2019/04/19/cine/Cartel-Capitan-America-primer-vengador_1347176476_98593532_667x988.jpg" alt="">
+            <h4>Capitán América: el primer vengador</h4>
+            <p>Tras tres meses de someterse a un programa de entrenamiento físico y táctico, Steve Rogers es encomendado su primera misión como Capitán América. Armado con un escudo indestructible, emprenderá la guerra contra el Mal como líder de los Vengadores.</p>
+            <a href="https://es.wikipedia.org/wiki/Capit%C3%A1n_Am%C3%A9rica:_El_primer_vengador">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT4prgaAFROC5b20TABhsgF4eSeehjvRjJC7uud7yQ9QdkNU4sR" alt="">
+            <h4>The Avengers</h4>
+            <p>El director de la Agencia SHIELD decide reclutar a un equipo para salvar al mundo de un desastre casi seguro cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial.</p>
+            <a href="https://es.wikipedia.org/wiki/The_Avengers_(pel%C3%ADcula_de_2012)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img3.acsta.net/medias/nmedia/18/77/86/82/20486826.jpg" alt="">
+            <h4>Iron Man 3</h4>
+            <p>El descarado y brillante Tony Stark, tras ver destruido todo su universo personal, debe encontrar y enfrentarse a un enemigo cuyo poder no conoce límites. Este viaje pondrá a prueba su entereza una y otra vez, y le obligará a confiar en su ingenio.</p>
+            <a href="https://es.wikipedia.org/wiki/Iron_Man_3">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.lahiguera.net/cinemania/pelicula/6154/thor_el_mundo_oscuro-cartel-4834.jpg" alt="">
+            <h4>Thor: The Dark World</h4>
+            <p>Malekith, un enemigo más antiguo que el universo, regresa a la Tierra para cumplir su plan destructor. Thor debe enfrentarse a un rival al que ni siquiera Odín parece poder detener y, desesperado, libera a su hermano Loki para que lo ayude.</p>
+            <a href="https://es.wikipedia.org/wiki/Thor:_The_Dark_World">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img3.acsta.net/pictures/14/01/31/16/12/220933.jpg" alt="">
+            <h4>Captain America: The Winter Soldier</h4>
+            <p>Tras los devastadores acontecimientos vividos en Nueva York, el superhéroe vive tranquilamente en Washington D.C., intentando adaptarse al mundo moderno. Sin embargo, cuando un colega de es amenazado, Rogers se ve envuelto en una trama de intrigas.</p>
+            <a href="https://es.wikipedia.org/wiki/Captain_America:_The_Winter_Soldier">Leer más</a>
+        </div>
+        
+        <div class="card">
+            <img src="https://www.lahiguera.net/cinemania/pelicula/6388/guardianes_de_la_galaxia-cartel-5615.jpg" alt="">
+            <h4>Guardianes de la Galaxia</h4>
+            <p>El temerario aventurero Peter Quill, tras robar una misteriosa esfera codiciada por Ronan, un poderoso villano cuyas ambiciones amenazan a todo el universo, se convierte en la presa más codiciada por todos los cazarrecompensas de la galaxia.</p>
+            <a href="https://es.wikipedia.org/wiki/Guardianes_de_la_Galaxia_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="http://pm1.narvii.com/6281/ce540fb81ee3736269fd647f7bfd34eaf0613aa0_00.jpg" alt="">
+            <h4>Avengers: Age of Ultron</h4>
+            <p>Tony Stark quiere lanzar un nuevo programa de paz, pero algo sale mal y acaba creando a Ultrón, un robot que quiere destruir a la humanidad. Thor, Hulk y el resto de los Vengadores deberán juntar sus fuerzas una vez más para luchar contra el robot. En su camino para destruir Ultrón, los Vengadores conocerán a dos nuevos misteriosos compañeros, Pietro y Wanda Maximoff, conocidos como Quicksilver y Bruja Escarlata.</p>
+            <a href="https://es.wikipedia.org/wiki/Avengers:_Age_of_Ultron">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.lahiguera.net/cinemania/pelicula/6806/ant_man-cartel-6176.jpg" alt="">
+            <h4>Ant-Man</h4>
+            <p>El doctor Hank Pym anuncia que abandona S.H.I.E.L.D. tras descubrir que han tratado de apropiarse de la tecnología de su Ant-Man, que Pym considera altamente peligrosa. Varios años después, Scott Lang sale de prisión tras cumplir tres años de condena por robo.</p>
+            <a href="https://es.wikipedia.org/wiki/Ant-Man_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img3.acsta.net/pictures/16/03/14/17/21/324829.jpg" alt="">
+            <h4>Capitán América: Civil War</h4>
+            <p>Mientras intentan detener a Rumlow en Lagos, Capitán América, Falcon, Viuda Negra y Bruja Escarlata se ven obligados a realizar una intervención para evitar el robo de una muestra letal en el Instituto de Enfermedades Infecciosas.</p>
+            <a href="https://es.wikipedia.org/wiki/Capit%C3%A1n_Am%C3%A9rica:_Civil_War">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://www.lahiguera.net/cinemania/pelicula/7562/doctor_strange-cartel-7087.jpg" alt="">
+            <h4>Doctor Strange</h4>
+            <p>La vida del famoso neurocirujano Dr. Stephen Strange cambia para siempre cuando un terrible accidente de coche le arrebata el uso de sus manos. Cuando la medicina tradicional le falla, busca la curación en un lugar misterioso llamado Kamar-Taj, que no solo es un centro de curación sino también el frente de una batalla contra fuerzas oscuras ocultas. Strange, armado con poderes mágicos recién adquiridos, debe elegir si regresar a su antigua vida o defender el mundo como su hechicero más poderoso.</p>
+            <a href="https://es.wikipedia.org/wiki/Doctor_Strange_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img3.acsta.net/pictures/17/03/09/14/11/154943.jpg" alt="">
+            <h4>Guardianes de la Galaxia Vol. 2</h4>
+            <p>Una poderosa raza alienígena contrata a los Guardianes para que protejan sus valiosas baterías de energía, pero, cuando Rocket las roba, los alienígenas envían a sus tropas de combate a vengarse de los Guardianes. Mientras tratan de escapar con vida, intentan resolver el misterio de los verdaderos orígenes de Peter Quill.</p>
+            <a href="https://es.wikipedia.org/wiki/Guardianes_de_la_Galaxia_vol._2">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="http://www.elespectadorimaginario.com/wp-content/webpc-passthru.php?src=http://www.elespectadorimaginario.com/wp-content/uploads/spider_man_homecoming-cartel.jpg&nocache=1" alt="">
+            <h4>Spider-Man: Homecoming</h4>
+            <p>Peter Parker asume su nueva identidad como Spider-Man y regresa a vivir con su tía después de su aventura con los Vengadores. Al volver, mientras sigue bajo la tutela de Tony Stark, descubre que ha surgido un nuevo y despiadado enemigo que pretende destruir todo lo que ama: el Buitre.</p>
+            <a href="https://es.wikipedia.org/wiki/Spider-Man:_Homecoming">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img2.acsta.net/pictures/17/08/25/09/36/103601.jpg" alt="">
+            <h4>Thor: Ragnarok</h4>
+            <p>Thor está preso en el otro extremo del universo. Necesita regresar a tiempo para evitar que la todopoderosa Hela destruya su mundo, pero para escapar de su confinamiento y evitar el apocalipsis tendrá que vencer antes al increíble Hulk en un torneo de gladiadores.</p>
+            <a href="https://es.wikipedia.org/wiki/Thor:_Ragnarok">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img2.acsta.net/pictures/17/12/11/16/27/3406097.jpg" alt="">
+            <h4>Pantera Negra</h4>
+            <p>Hace millones de años, un meteorito de poderoso vibranium impactó en África. Cuando llegó la era del hombre, la mayoría de los habitantes de aquel territorio se unieron bajo el mando de un guerrero chamán que, gracias al vibranium, adquirió fuerza, velocidad e instinto sobrehumano, convirtiéndose en el primer Black Panther.</p>
+            <a href="https://es.wikipedia.org/wiki/Pantera_Negra_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://es.web.img3.acsta.net/pictures/18/03/16/15/33/3988420.jpg" alt="">
+            <h4>Avengers: Infinity War</h4>
+            <p>Los superhéroes se alían para vencer al poderoso Thanos, el peor enemigo al que se han enfrentado. Si Thanos logra reunir las seis gemas del infinito: poder, tiempo, alma, realidad, mente y espacio, nadie podrá detenerlo.</p>
+            <a href="https://es.wikipedia.org/wiki/Avengers:_Infinity_War">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/911Gc+MRR1L._RI_.jpg" alt="">
+            <h4>Ant-Man and the Wasp</h4>
+            <p>Scott Lang vuelve a enfundarse el traje de Ant-Man para pelear codo a codo junto con la Avispa. La misión revela a los dos superhéroes un secreto terrible y los enfrenta a su enemigo más poderoso.</p>
+            <a href="https://es.wikipedia.org/wiki/Ant-Man_and_the_Wasp">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/91O9wVdiMnL.jpg" alt="">
+            <h4>Capitana Marvel</h4>
+            <p>La guerrera Vers no recuerda su pasado, el cual vuelve a ella en sueños. A pesar de sus problemas para controlar sus emociones y, con ellas, sus poderes, la Inteligencia Suprema le permite participar en una misión. Con la ayuda de Nick Fury tratará de descubrir los secretos de su pasado mientras aprovecha sus poderes para acabar con la guerra.</p>
+            <a href="https://es.wikipedia.org/wiki/Capitana_Marvel_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiC3mSrAdG2_Tkuz5CbCm2TA-wYikac3dOPVlzb5jCk1gqsHOD" alt="">
+            <h4>Avengers: Endgame</h4>
+            <p>Después de los eventos devastadores de "Avengers: Infinity War", el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.</p>
+            <a href="https://es.wikipedia.org/wiki/Avengers:_Endgame">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSUwilLyU4GtFBLzXkfM7f_KRep_7qXK9e30Zlix6JlO6DOoI82" alt="">
+            <h4>Spider-Man: Lejos de casa</h4>
+            <p>Peter Parker decide pasar unas merecidas vacaciones en Europa junto a MJ, Ned y el resto de sus amigos. Sin embargo, Peter debe volver a ponerse el traje de Spider-Man cuando Nick Fury le encomienda una nueva misión: frenar el ataque de unas criaturas que están causando el caos en el continente.</p>
+            <a href="https://es.wikipedia.org/wiki/Spider-Man:_lejos_de_casa">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR80vTIhBx_wMxRrq_KEZkn4BDWScFFfQzpFP7-dJBgOYHjr2pi" alt="">
+            <h4>Black Widow</h4>
+            <p>Una peligrosa conspiración, relacionada con su pasado, persigue a Natasha Romanoff, también conocida como Viuda Negra. La agente tendrá que lidiar con las consecuencias de haber sido espía, así como con las relaciones rotas, para sobrevivir.</p>
+            <a href="https://es.wikipedia.org/wiki/Black_Widow_(pel%C3%ADcula)">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR_NaYK5N1oRe1DioSI7qxzhaJmuw1btXr2mXffQTGYN2iYKRyX" alt="">
+            <h4>Shang-Chi y la leyenda de los Diez Anillos</h4>
+            <p>El maestro de artes marciales Shang-Chi se enfrenta al pasado que creía haber dejado atrás cuando se ve envuelto en la red de la misteriosa organización de los Diez Anillos.</p>
+            <a href="https://es.wikipedia.org/wiki/Shang-Chi_y_la_leyenda_de_los_Diez_Anillos">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3ksk9K-b2pT6OOczS4ucB5aH_l7hOGuIO7RUXMubkxOfbhmQX" alt="">
+            <h4>Spider-Man: No Way Home</h4>
+            <p>Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter decide pedirle ayuda al Doctor Extraño para recuperar su vida. Pero algo sale mal y provoca una fractura en el multiverso.</p>
+            <a href="https://es.wikipedia.org/wiki/Spider-Man:_No_Way_Home">Leer más</a>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRMcTX7_0hH2qslKSEgZ7G1guoeD0EQic8qMCAgQRO_tng1xfAP" alt="">
+            <h4>Doctor Strange en el Multiverso de la Locura</h4>
+            <p>El Dr. Stephen Strange abre un portal al multiverso al utilizar un hechizo prohibido. Ahora su equipo debe enfrentarse a una amenaza enorme.</p>
+            <a href="https://es.wikipedia.org/wiki/Doctor_Strange_en_el_multiverso_de_la_locura">Leer más</a>
+        </div> -->
+    </div> 
+
+    <!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crea una cuenta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="signup-form">
+                <div class="form-group">
+                    <input type="text" id="signup-email" class="form-control" placeholder="email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signup-password" class="form-control" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal Signin -->
+<div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Inicia sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="text" id="login-email" class="form-control" placeholder="email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Signin</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <!-- MAIN CONTENT TWO -->
+    <div class="container p-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <ul class="list-group posts">
+            </ul>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- ALERT SCRIPTS -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+    <!-- CUSTOM CODE -->
+    <script src="../src/principal/main.js" type="module"></script>
+    <script src="../src//storage.js" type="module"></script>
+</body>
+</html>
